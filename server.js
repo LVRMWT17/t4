@@ -59,7 +59,7 @@ app.post('/login', (req, res) => {
                 console.error('An error', err);
                 return res.status(500).json({ message: 'Authentication failed.' });
             }
-            res.json({ message: 'Successfully'})
+            return res.json({ message: 'Successfully'})
     });
 });
 })
@@ -78,7 +78,7 @@ app.post('/register', (req, res) => {
         if (err) {
             return res.status(500).json({ message: 'An error during registration. Try again.' });
         }
-        res.json({message: 'Successfully'})
+        return res.json({message: 'Successfully'})
     });
 });
 });
@@ -114,7 +114,7 @@ app.post('/delall', (_req, res) => {
                 return res.json({ message: 'Users are deleted.', redirect: true });
             }
 
-            res.json({ message: 'Users are deleted.', redirect: false }); })
+           return res.json({ message: 'Users are deleted.', redirect: false }); })
     });
 });
 app.post('/blockall', (_req, res) => {
