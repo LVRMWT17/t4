@@ -76,9 +76,9 @@ app.post('/register', (req, res) => {
     const query = 'INSERT INTO users2 (email, password, first_name, last_name, last_visit) VALUES (?, ?, ?, ?, ?)';
     db.execute(query, [email, password, firstName, lastName, registrationTime], (err, results) => {
         if (err) {
-            return res.status(500).json({ message: 'An error during registration. Try again.' });
+            return res.status(500).json({ message: 'An error during registration. Try again.', err });
         }
-        return res.json({message: 'Successfully'})
+        return res.json({message: 'Successfully'});
     });
 });
 });
