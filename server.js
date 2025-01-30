@@ -184,3 +184,4 @@ app.post('/table/del', (_req, res) => {
 })
 app.listen(PORT, () => { console.log(`Сервер запущен на http://localhost:${PORT}`);
 })
+export default app;
